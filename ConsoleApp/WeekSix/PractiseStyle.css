@@ -1,0 +1,58 @@
+﻿body
+{
+    background-color:azure;
+    padding: 20px;
+}
+
+img{
+    width: 100px;
+    height: 200px
+}
+
+a:visited{
+  color: gray;  
+}
+a:hover{
+    color: red;
+}
+
+.green{
+    color: green;
+}
+
+.fifteenPad{
+    padding: 10px;
+}
+
+.thirty-margin-left{
+    margin-left: 30px;
+}
+
+.text-centre{
+    text-align: center;
+}
+
+#my-table {
+    width: 100%;
+    font-size: 30px;
+}
+
+.my-table {
+    font-size: 5px;
+}
+
+.my-table {
+    font-size: 20px;
+}
+
+table {
+    font-size: 15px;
+}
+
+div .blue{
+    color: blue
+}
+
+.right-space{
+    margin-right: 40px;
+}
