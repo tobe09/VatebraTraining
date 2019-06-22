@@ -2,6 +2,7 @@
 {
     public class TodoConstants
     {
+        public const string UserIdKey = "userId";
         public const string UsernameKey = "username";
         public const string PasswordKey = "password";
         public const string IsLoggedin = "isLoggedIn";

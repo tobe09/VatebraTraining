@@ -1,0 +1,41 @@
+﻿@model Todo.MvcApplication.Models.TodoViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-4">
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class="col-sm-4">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class="col-sm-4">
+            Commencement
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.DateToCommence)
+        </dd>
+        <dt class="col-sm-4">
+            Date Added
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.DateAdded)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { Id = Model.Id }) |
+    <a asp-action="Index">Back to List</a>
+</div>

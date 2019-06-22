@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Todo.Domain.DomainServices.Register.Models;
+using Todo.Domain.DomainServices.Todo.Models;
 
 namespace Todo.InMemoryDataProvider.Collection
 {
@@ -15,13 +17,43 @@ namespace Todo.InMemoryDataProvider.Collection
                 {
                     users = new List<User>
                     {
-                        new User {Username = "Admin", Password = "admin", PhoneNumber = 08066002123, EmailAddress  = "Admin@yahoo.com" },
-                        new User { Username = "Tayo",Password = "tayo", PhoneNumber = 08136002123, EmailAddress  = "Tayo@yahoo.com" },
-                        new User { Username = "Abbey",Password = "abbey", PhoneNumber = 08136229423, EmailAddress  = "Abbey@yahoo.com" }
+                        new User { Id = 1, Username = "Admin", Password = "admin", PhoneNumber = 08066002123,
+                            EmailAddress  = "Admin@yahoo.com" },
+                        new User { Id = 2, Username = "Tayo",Password = "tayo", PhoneNumber = 08136002123,
+                            EmailAddress  = "Tayo@yahoo.com" },
+                        new User { Id = 3, Username = "Abbey",Password = "abbey", PhoneNumber = 08136229423,
+                            EmailAddress  = "Abbey@yahoo.com" }
                     };
                 }
 
                 return users;
+            }
+        }
+
+        private static List<TodoEntity> todoEntities;
+
+        public static List<TodoEntity> TodoEntities
+        {
+            get
+            {
+                if (todoEntities == null)
+                {
+                    todoEntities = new List<TodoEntity>
+                    {
+                        new TodoEntity{ Id = 1, UserId=2 ,Title="Buy Watch", Description="I want to buy a watch",
+                            DateAdded =DateTime.Now,DateToCommence=new DateTime(2019, 7,12)},
+                        new TodoEntity{ Id = 2, UserId=2 ,Title="Buy Gas", Description="I want to buy a gas",
+                            DateAdded =DateTime.Now,DateToCommence=new DateTime(2019, 7,12)},
+                        new TodoEntity{ Id = 3, UserId=2 ,Title="Buy Shoe", Description="I want to buy a shoe",
+                            DateAdded =DateTime.Now,DateToCommence=new DateTime(2019, 7,12)},
+                        new TodoEntity{ Id = 4, UserId=3 ,Title="Buy Gas", Description="I want to buy a gas",
+                            DateAdded =DateTime.Now,DateToCommence=new DateTime(2019, 7,12)},
+                        new TodoEntity{ Id = 5, UserId=3 ,Title="Buy Shoe", Description="I want to buy a shoe",
+                            DateAdded =DateTime.Now,DateToCommence=new DateTime(2019, 7,12)}
+                    };
+                }
+
+                return todoEntities;
             }
         }
     }

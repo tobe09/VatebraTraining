@@ -1,0 +1,12 @@
+﻿@model Todo.MvcApplication.Models.BaseViewModel
+
+<div class="form-group">
+    @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+    {
+        <label asp-for="ErrorMessage" class="control-label text-danger">@Model.ErrorMessage</label>
+    }
+    else if (!string.IsNullOrEmpty(Model.SuccessMessage))
+    {
+        <label asp-for="SuccessMessage" class="control-label text-success">@Model.SuccessMessage</label>
+    }
+</div>

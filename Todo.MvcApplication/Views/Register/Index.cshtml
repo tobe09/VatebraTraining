@@ -9,16 +9,9 @@
 <div class="row">
     <div class="col-md-4">
         <form asp-action="PerformRegistration">
-            <div class="form-group">
-                @if (!string.IsNullOrEmpty(Model.ErrorMessage))
-                {
-                    <label asp-for="ErrorMessage" class="control-label text-danger">@Model.ErrorMessage</label>
-                }
-                else if (!string.IsNullOrEmpty(Model.SuccessMessage))
-                {
-                    <label asp-for="SuccessMessage" class="control-label text-success">@Model.SuccessMessage</label>
-                }
-            </div>
+
+            <partial name="ErrorPartial" model="Model" />
+
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="EmailAddress" class="control-label"></label>

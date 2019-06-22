@@ -3,5 +3,6 @@
     public interface ILoginDataProvider
     {
         bool IsRegisteredUser(string username, string password);
+        int GetUserId(string username);
     }
 }

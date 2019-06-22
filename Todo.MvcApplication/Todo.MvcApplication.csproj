@@ -14,6 +14,7 @@
 
 
   <ItemGroup>
+    <ProjectReference Include="..\EntityFrameworkDataProvider\Todo.EntityFrameworkDataProvider.csproj" />
     <ProjectReference Include="..\Todo.Domain\Todo.Domain.csproj" />
     <ProjectReference Include="..\Todo.InMemoryDataAccess\Todo.InMemoryDataProvider.csproj" />
   </ItemGroup>

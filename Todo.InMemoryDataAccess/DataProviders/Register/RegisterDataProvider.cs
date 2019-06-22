@@ -10,6 +10,10 @@ namespace Todo.InMemoryDataProvider.DataProviders.Register
     {
         public void AddUser(User user)
         {
+            int maxId = InMemoryContext.Users.Max(x => x.Id);
+
+            user.Id = maxId + 1;
+
             InMemoryContext.Users.Add(user);
         }
 

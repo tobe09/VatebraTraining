@@ -56,7 +56,7 @@
                     @if (isLoggedIn)
                     {
                         string username = context.HttpContext.Session.GetString(TodoConstants.UsernameKey);
-                        <div class="float-right font-weight-bold">Welcome @username</div>
+                        <div class="float-right font-weight-bold" style="position: absolute">Welcome @username</div>
                     }
                 </div>
             </div>

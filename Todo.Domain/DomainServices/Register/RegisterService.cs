@@ -26,7 +26,7 @@ namespace Todo.Domain.DomainServices.Register
 
             registerDataAccess.AddUser(user);
 
-            return new GenericResponseModel { ErrorMessage = $"User {user.Username} Successfully Created" };
+            return new GenericResponseModel { SuccessMessage = $"User {user.Username} Successfully Created" };
         }
 
         public IEnumerable<User> GetAllUsers()

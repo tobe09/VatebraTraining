@@ -1,6 +1,12 @@
-﻿using Todo.Domain.DomainServices.Register;
+﻿using Todo.Domain.DomainServices.Login;
+using Todo.Domain.DomainServices.Login.DataProviders;
+using Todo.Domain.DomainServices.Register;
 using Todo.Domain.DomainServices.Register.DataProviders;
+using Todo.Domain.DomainServices.Todo;
+using Todo.Domain.DomainServices.Todo.DataProviders;
+using Todo.InMemoryDataProvider.DataProviders.Login;
 using Todo.InMemoryDataProvider.DataProviders.Register;
+using Todo.InMemoryDataProvider.DataProviders.Todo;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
@@ -10,6 +16,12 @@ namespace Microsoft.Extensions.DependencyInjection
         {
             services.AddTransient<IRegisterService, RegisterService>();
             services.AddTransient<IRegisterDataProvider, RegisterDataProvider>();
+
+            services.AddTransient<ILoginService, LoginService>();
+            services.AddTransient<ILoginDataProvider, LoginDataProvider>();
+
+            services.AddTransient<ITodoService, TodoService>();
+            services.AddTransient<ITodoDataProvider, TodoDataProvider>();
         }
     }
 }
