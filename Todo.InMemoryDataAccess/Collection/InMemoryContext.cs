@@ -30,25 +30,25 @@ namespace Todo.InMemoryDataProvider.Collection
             }
         }
 
-        private static List<TodoEntity> todoEntities;
+        private static List<Todos> todoEntities;
 
-        public static List<TodoEntity> TodoEntities
+        public static List<Todos> TodoEntities
         {
             get
             {
                 if (todoEntities == null)
                 {
-                    todoEntities = new List<TodoEntity>
+                    todoEntities = new List<Todos>
                     {
-                        new TodoEntity{ Id = 1, UserId=2 ,Title="Buy Watch", Description="I want to buy a watch",
+                        new Todos{ Id = 1, UserId=2 ,Title="Buy Watch", Description="I want to buy a watch",
                             DateAdded =DateTime.Now,DateToCommence=new DateTime(2019, 7,12)},
-                        new TodoEntity{ Id = 2, UserId=2 ,Title="Buy Gas", Description="I want to buy a gas",
+                        new Todos{ Id = 2, UserId=2 ,Title="Buy Gas", Description="I want to buy a gas",
                             DateAdded =DateTime.Now,DateToCommence=new DateTime(2019, 7,12)},
-                        new TodoEntity{ Id = 3, UserId=2 ,Title="Buy Shoe", Description="I want to buy a shoe",
+                        new Todos{ Id = 3, UserId=2 ,Title="Buy Shoe", Description="I want to buy a shoe",
                             DateAdded =DateTime.Now,DateToCommence=new DateTime(2019, 7,12)},
-                        new TodoEntity{ Id = 4, UserId=3 ,Title="Buy Gas", Description="I want to buy a gas",
+                        new Todos{ Id = 4, UserId=3 ,Title="Buy Gas", Description="I want to buy a gas",
                             DateAdded =DateTime.Now,DateToCommence=new DateTime(2019, 7,12)},
-                        new TodoEntity{ Id = 5, UserId=3 ,Title="Buy Shoe", Description="I want to buy a shoe",
+                        new Todos{ Id = 5, UserId=3 ,Title="Buy Shoe", Description="I want to buy a shoe",
                             DateAdded =DateTime.Now,DateToCommence=new DateTime(2019, 7,12)}
                     };
                 }

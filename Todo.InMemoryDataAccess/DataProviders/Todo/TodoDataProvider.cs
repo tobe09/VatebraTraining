@@ -9,7 +9,7 @@ namespace Todo.InMemoryDataProvider.DataProviders.Todo
 {
     public class TodoDataProvider : ITodoDataProvider
     {
-        public void CreateTodo(TodoEntity todo)
+        public void CreateTodo(Todos todo)
         {
             int maxId = InMemoryContext.TodoEntities.Max(x => x.Id);
 
@@ -27,7 +27,7 @@ namespace Todo.InMemoryDataProvider.DataProviders.Todo
             InMemoryContext.TodoEntities.Remove(todo);
         }
 
-        public IEnumerable<TodoEntity> GetAllTodos(int userId)
+        public IEnumerable<Todos> GetAllTodos(int userId)
         {
             if (userId == 1)
                 return InMemoryContext.TodoEntities;
@@ -35,12 +35,12 @@ namespace Todo.InMemoryDataProvider.DataProviders.Todo
             return InMemoryContext.TodoEntities.Where(x => x.UserId == userId);
         }
 
-        public TodoEntity GetTodo(int id)
+        public Todos GetTodo(int id)
         {
             return InMemoryContext.TodoEntities.FirstOrDefault(x => x.Id == id);
         }
 
-        public void UpdateTodo(TodoEntity todo)
+        public void UpdateTodo(Todos todo)
         {
             var oldTodo = InMemoryContext.TodoEntities.FirstOrDefault(x => x.Id == todo.Id);
             if (oldTodo == null)

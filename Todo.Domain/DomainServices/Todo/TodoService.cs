@@ -14,7 +14,7 @@ namespace Todo.Domain.DomainServices.Todo
             this.todoDataProvider = todoDataProvider;
         }
 
-        public void CreateTodo(TodoEntity todo)
+        public void CreateTodo(Todos todo)
         {
             todo.DateAdded = DateTime.Now;
             todoDataProvider.CreateTodo(todo);
@@ -25,17 +25,17 @@ namespace Todo.Domain.DomainServices.Todo
             todoDataProvider.DeleteTodo(id);
         }
 
-        public IEnumerable<TodoEntity> GetAllTodos(int userId)
+        public IEnumerable<Todos> GetAllTodos(int userId)
         {
             return todoDataProvider.GetAllTodos(userId);
         }
 
-        public TodoEntity GetTodo(int id)
+        public Todos GetTodo(int id)
         {
             return todoDataProvider.GetTodo(id);
         }
 
-        public void UpdateTodo(TodoEntity todo)
+        public void UpdateTodo(Todos todo)
         {
             todoDataProvider.UpdateTodo(todo);
         }

@@ -47,7 +47,7 @@ namespace Todo.MvcApplication.Controllers
         {
             int? userId = HttpContext.Session.GetInt32(TodoConstants.UserIdKey);
 
-            var todo = new TodoEntity
+            var todo = new Todos
             {
                 UserId = userId.Value,
                 Title = todoViewModel.Title,
@@ -83,7 +83,7 @@ namespace Todo.MvcApplication.Controllers
         [HttpPost]
         public IActionResult Edit(TodoViewModel todoViewModel)
         {
-            var todoEntity = new TodoEntity
+            var todoEntity = new Todos
             {
                 Id = todoViewModel.Id,
                 UserId = todoViewModel.UserId,

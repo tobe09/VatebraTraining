@@ -5,10 +5,10 @@ namespace Todo.Domain.DomainServices.Todo.DataProviders
 {
     public interface ITodoDataProvider
     {
-        IEnumerable<TodoEntity> GetAllTodos(int userId);
-        TodoEntity GetTodo(int id);
-        void CreateTodo(TodoEntity todo);
-        void UpdateTodo(TodoEntity todo);
+        IEnumerable<Todos> GetAllTodos(int userId);
+        Todos GetTodo(int id);
+        void CreateTodo(Todos todo);
+        void UpdateTodo(Todos todo);
         void DeleteTodo(int id);
     }
 }

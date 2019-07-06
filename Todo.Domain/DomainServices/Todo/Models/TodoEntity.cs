@@ -3,7 +3,7 @@ using Todo.Domain.DomainServices.Common;
 
 namespace Todo.Domain.DomainServices.Todo.Models
 {
-    public class TodoEntity: BaseEntity
+    public class Todos: BaseEntity
     {
         public int UserId { get; set; }
         public string Title { get; set; }

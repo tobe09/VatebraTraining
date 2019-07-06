@@ -6,7 +6,7 @@ namespace Todo.EntityFrameworkDataProvider.Collection
 {
     public class TodoDbContext : DbContext
     {
-        public TodoDbContext() : base()
+        public TodoDbContext(DbContextOptions<TodoDbContext> options) : base(options)
         {
         }
 

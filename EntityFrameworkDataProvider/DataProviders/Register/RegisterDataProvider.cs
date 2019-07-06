@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Todo.Domain.DomainServices.Register.DataProviders;
 using Todo.Domain.DomainServices.Register.Models;
 using Todo.EntityFrameworkDataProvider.Collection;
@@ -17,22 +18,40 @@ namespace Todo.EntityFrameworkDataProvider.DataProviders.Register
 
         public void AddUser(User user)
         {
-            throw new NotImplementedException();
+            UserEntity userEntity = new UserEntity
+            {
+                EmailAddress = user.EmailAddress,
+                Password = user.Password,
+                Username = user.Username,
+                PhoneNumber = user.PhoneNumber
+            };
+
+            todoDbContext.Users.Add(userEntity);
+            todoDbContext.SaveChanges();
         }
 
         public bool EmailAddressExists(string emailAddress)
         {
-            throw new NotImplementedException();
+            bool emailExists = todoDbContext.Users.Any(x => x.EmailAddress.Equals(emailAddress, StringComparison.OrdinalIgnoreCase));
+            return emailExists;
         }
 
         public IEnumerable<User> GetAllUsers()
         {
-            throw new NotImplementedException();
+            return todoDbContext.Users.Select(x => new User
+            {
+                Id = x.Id,
+                EmailAddress = x.EmailAddress,
+                Password = x.Password,
+                PhoneNumber = x.PhoneNumber,
+                Username = x.Username
+            });
         }
 
         public bool UsernameExists(string username)
         {
-            throw new NotImplementedException();
+            bool usernameExists = todoDbContext.Users.Any(x => x.Username.Equals(username, StringComparison.OrdinalIgnoreCase));
+            return usernameExists;
         }
     }
 }
