@@ -13,8 +13,7 @@ namespace Todo.EntityFrameworkDataProvider.Collection
         public virtual DbSet<UserEntity> Users { get; set; }
         public virtual DbSet<TodoEntity> TodoEntities { get; set; }
     }
-
-
+    
     public class BaseEntity
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
