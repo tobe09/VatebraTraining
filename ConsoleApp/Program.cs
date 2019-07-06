@@ -10,10 +10,11 @@ namespace Practise
             //Assignment1A.Run();
             //WeekTwo.GuessingGame.Run();
             //ClassTwo.Run();
-            WeekThree.AssignmentTwo.Run();
+            //WeekThree.AssignmentTwo.Run();
             //WeekFour.AssignmentThree.Run();
             //WeekFour.ClassFour.Run();
             //WeekFive.AssignmentFour.Run();
+            WeekTwelve.ArrayIntersection.Run();
 
             Console.ReadKey();
         }
